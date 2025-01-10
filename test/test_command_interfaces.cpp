@@ -6,6 +6,8 @@
 #include "lbr_fri_idl/msg/lbr_joint_position_command.hpp"
 #include "lbr_fri_idl/msg/lbr_torque_command.hpp"
 #include "lbr_fri_idl/msg/lbr_wrench_command.hpp"
+// #include "lbr_fri_idl/msg/lbr_cartesian_matrix_command.hpp"
+#include "lbr_fri_idl/msg/lbr_cartesian_pose_command.hpp"
 
 TEST(lbr_fri_idl, test_command_size) {
   using namespace KUKA::FRI;
@@ -24,6 +26,13 @@ TEST(lbr_fri_idl, test_command_size) {
   lbr_fri_idl::msg::LBRWrenchCommand lbr_wrench_command;
   EXPECT_EQ(lbr_wrench_command.joint_position.size(), LBRState::NUMBER_OF_JOINTS);
   EXPECT_EQ(lbr_wrench_command.wrench.size(), 6);
+
+  lbr_fri_idl::msg::LBRCartesianPoseCommand lbr_cart_pose_command;
+  EXPECT_EQ(lbr_cart_pose_command.cartesian_pose_quaternion.size(), 7);
+  
+  
+  // lbr_fri_idl::msg::LBRCartesianMatrixCommand lbr_cart_mat_command;
+  // EXPECT_EQ(lbr_cart_mat_command.cartesian_pose_as_matrix.size(), 12);
 }
 
 int main(int argc, char **argv) {

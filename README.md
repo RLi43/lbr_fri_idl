@@ -23,7 +23,16 @@ Interface definition language (IDL) messages for the FRI.
 
 - `LBRCommand.msg`:
     - Combined message to buffer the above
+- `LBRCartesianPoseCommand.msg`:
+    - Control mode:
+        - `POSITION_CONTROL`
+        - `JOINT_IMPEDANCE_CONTROL`
+        - `CARTESIAN_IMPEDANCE_CONTROL`
+    - Client command mode: `CARTESIAN_POSE`
+    - Contains:
+        - Cartesian pose
+
 
 ## State Interfaces
 - `LBRState.msg`:
-    - FRI exposed robot state
+    - All FRI exposed robot state
